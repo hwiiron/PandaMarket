@@ -5,7 +5,7 @@ const SignUp = () => {
     <div className="wrapper login">
       <div className="inner">
         <h1>
-          <a className="logo" href="/"></a>
+          <Link className="logo" to={"/"}></Link>
         </h1>
 
         <div className="loginWrap">
