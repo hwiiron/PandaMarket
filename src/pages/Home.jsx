@@ -1,4 +1,6 @@
 import "./Home.css";
+import Header from "../layouts/Header";
+import Footer from "../layouts/Footer";
 
 import Img01 from "../assets/Img_home_01.svg";
 import Img02 from "../assets/Img_home_02.svg";
@@ -6,7 +8,9 @@ import Img03 from "../assets/Img_home_03.svg";
 
 const Home = () => {
   return (
-    <div className="wrapper">
+    <>
+      <Header />
+
       <main>
         <section id="visual">
           <div className="inner">
@@ -94,7 +98,9 @@ const Home = () => {
           </div>
         </section>
       </main>
-    </div>
+
+      <Footer />
+    </>
   );
 };
 
