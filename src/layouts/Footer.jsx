@@ -3,10 +3,10 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <div class="inner">
-        <p class="copyright">©codeit - 2024</p>
+      <div className="inner">
+        <p className="copyright">©codeit - 2024</p>
 
-        <ul class="privacy">
+        <ul className="privacy">
           <li>
             <a href="privacy.html">Privacy Policy</a>
           </li>
@@ -16,22 +16,22 @@ const Footer = () => {
           </li>
         </ul>
 
-        <ul class="sns">
+        <ul className="sns">
           <li>
             <a
-              class="facebook"
+              className="facebook"
               href="https://www.facebook.com"
               target="_blank"
             ></a>
           </li>
 
           <li>
-            <a class="twitter" href="https://x.com" target="_blank"></a>
+            <a className="twitter" href="https://x.com" target="_blank"></a>
           </li>
 
           <li>
             <a
-              class="youtube"
+              className="youtube"
               href="https://www.youtube.com"
               target="_blank"
             ></a>
@@ -39,7 +39,7 @@ const Footer = () => {
 
           <li>
             <a
-              class="instagram"
+              className="instagram"
               href="https://www.instagram.com"
               target="_blank"
             ></a>

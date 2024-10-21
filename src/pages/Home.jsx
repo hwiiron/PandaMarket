@@ -6,13 +6,13 @@ import Img03 from "../assets/Img_home_03.svg";
 
 const Home = () => {
   return (
-    <div class="wrapper">
+    <div className="wrapper">
       <main>
         <section id="visual">
-          <div class="inner">
+          <div className="inner">
             <h2>
               일상의 모든 물건을
-              <br class="pc" />
+              <br className="pc" />
               거래해 보세요
             </h2>
 
@@ -21,16 +21,16 @@ const Home = () => {
         </section>
 
         <section id="content">
-          <ul class="itemList">
+          <ul className="itemList">
             <li>
               <img src={Img01} alt="Hot item" />
 
-              <div class="text">
+              <div className="text">
                 <span>Hot item</span>
 
                 <h3>
                   인기 상품을
-                  <br class="pc" />
+                  <br className="pc" />
                   확인해 보세요
                 </h3>
 
@@ -42,13 +42,13 @@ const Home = () => {
               </div>
             </li>
 
-            <li class="right">
-              <div class="text">
+            <li className="right">
+              <div className="text">
                 <span>Search</span>
 
                 <h3>
                   구매를 원하는
-                  <br class="pc" />
+                  <br className="pc" />
                   상품을 검색하세요
                 </h3>
 
@@ -65,12 +65,12 @@ const Home = () => {
             <li>
               <img src={Img03} alt="Register" />
 
-              <div class="text">
+              <div className="text">
                 <span>Register</span>
 
                 <h3>
                   판매를 원하는
-                  <br class="pc" />
+                  <br className="pc" />
                   상품을 등록하세요
                 </h3>
 
@@ -85,7 +85,7 @@ const Home = () => {
         </section>
 
         <section id="pandaMarket">
-          <div class="inner">
+          <div className="inner">
             <h4>
               믿을 수 있는
               <br />
