@@ -23,7 +23,7 @@ const StyledNavigation = styled.ul`
     margin-left: 20px;
   }
 
-  @media (max-width: 743px) {
+  @media (max-width: 744px) {
     gap: 8px;
     margin-left: 8px;
 

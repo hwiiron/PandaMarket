@@ -16,7 +16,7 @@ const StyledLogo = styled.h1`
     height: 100%;
   }
 
-  @media (max-width: 743px) {
+  @media (max-width: 744px) {
     width: 81px;
     height: 40px;
     background: url(${LogoM}) no-repeat;

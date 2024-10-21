@@ -104,7 +104,7 @@
   color: var(--gray700);
 }
 
-@media (max-width: 1119px) {
+@media (max-width: 1200px) {
   #visual {
     height: 771px;
   }
@@ -241,7 +241,7 @@
   }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 375px) {
   #visual .inner,
   #pandaMarket .inner {
     width: 100%;

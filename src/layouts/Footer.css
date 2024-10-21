@@ -67,7 +67,7 @@ footer .inner .sns .instagram {
 }
 
 /* 1120이하 해상도부터 양쪽 여백 추가 */
-@media (max-width: 1119px) {
+@media (max-width: 1200px) {
   section,
   footer {
     min-width: auto;
