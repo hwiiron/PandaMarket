@@ -11,6 +11,10 @@ const StyledHeaderInner = styled.div`
   a {
     margin-left: auto;
   }
+
+  @media (max-width: 1200px) {
+    width: 93.5%;
+  }
 `;
 
 export default StyledHeaderInner;
