@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getBestProducts } from "../../utils/api";
 import { StyledProducts, StyledTitle } from "./BestProducts.style";
 
-import Product from "./Product";
 import SkeletonProducts from "./SkeletonProducts";
+
+import Product from "./Product";
 
 const BestProducts = () => {
   const [products, setProducts] = useState([]);

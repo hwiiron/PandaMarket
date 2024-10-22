@@ -13,7 +13,7 @@ const Header = () => {
 
         <Navigation />
 
-        <Button text={"로그인"} disabled={false} />
+        <Button type={"LOGIN"} text={"로그인"} to={"/login"} />
         {/* <ProfileImg /> */}
       </StyledHeaderInner>
     </StyledHeader>

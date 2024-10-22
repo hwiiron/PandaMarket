@@ -8,8 +8,10 @@ const getBestProducts = async () => {
   return data;
 };
 
-const getAllProducts = async () => {
-  const response = await fetch(`${BASE_URL}?page=1&pageSize=10&orderBy=recent`);
+const getAllProducts = async ({ page, orderBy }) => {
+  const response = await fetch(
+    `${BASE_URL}?page=${page}&pageSize=10&orderBy=${orderBy}`
+  );
   const data = await response.json();
   return data;
 };
