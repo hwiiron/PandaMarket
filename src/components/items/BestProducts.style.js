@@ -9,7 +9,8 @@ const StyledTitle = styled.h2`
 
 const StyledProducts = styled.ul`
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 23px;
 `;
 
 export { StyledTitle, StyledProducts };

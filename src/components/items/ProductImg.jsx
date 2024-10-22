@@ -1,9 +1,14 @@
 import StyledImg from "./ProductImg.style";
+import defaultImg from "../../assets/codeit.svg";
 
-const ProductImg = ({ product }) => {
+const ProductImg = ({ product, type }) => {
+  const handleImgError = (e) => {
+    e.target.src = defaultImg;
+  };
+
   return (
-    <StyledImg>
-      <img src={product.images} alt={product.name} />
+    <StyledImg type={type}>
+      <img src={product.images} alt={product.name} onError={handleImgError} />
     </StyledImg>
   );
 };

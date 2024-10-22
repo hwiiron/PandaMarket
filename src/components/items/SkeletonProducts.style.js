@@ -8,8 +8,6 @@ const StyledSkeletonProducts = styled.ul`
 
   .skeleton-img {
     border-radius: 16px;
-    /* width: 282px;
-    height: 282px; */
     width: ${(props) => {
       switch (props.type) {
         case "BEST":

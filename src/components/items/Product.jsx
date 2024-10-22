@@ -4,11 +4,11 @@ import Likes from "./Likes";
 import ProductImg from "./ProductImg";
 import ProductInfo from "./ProductInfo";
 
-const Product = ({ product }) => {
+const Product = ({ product, type }) => {
   return (
     <StyleProduct>
       <article>
-        <ProductImg product={product} />
+        <ProductImg product={product} type={type} />
 
         <ProductInfo product={product} />
 
