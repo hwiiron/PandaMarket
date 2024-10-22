@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import StyledButton from "./Button.style";
 
-const Button = ({ text, disabled }) => {
+const Button = ({ type, text, to, disabled }) => {
   return (
-    <Link to={"/login"}>
-      <StyledButton disabled={disabled}>{text}</StyledButton>
+    <Link to={to}>
+      <StyledButton type={type} disabled={disabled}>
+        {text}
+      </StyledButton>
     </Link>
   );
 };
