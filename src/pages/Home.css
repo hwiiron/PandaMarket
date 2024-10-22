@@ -11,7 +11,7 @@
 }
 
 #visual .inner {
-  background: url(../assets/Img_home_top.svg) no-repeat right bottom;
+  background: url(../assets/home/Img_home_top.svg) no-repeat right bottom;
   padding-top: 240px;
 }
 
@@ -94,7 +94,7 @@
 }
 
 #pandaMarket .inner {
-  background: url(../assets/Img_home_bottom.svg) no-repeat right bottom;
+  background: url(../assets/home/Img_home_bottom.svg) no-repeat right bottom;
   padding-top: 255px;
 }
 
