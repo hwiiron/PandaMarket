@@ -5,6 +5,7 @@ import { StyledProducts, StyledTitle } from "./BestProducts.style";
 import SkeletonProducts from "./SkeletonProducts";
 
 import Product from "./Product";
+import { Link } from "react-router-dom";
 
 const BestProducts = () => {
   const [products, setProducts] = useState([]);
@@ -56,9 +57,11 @@ const BestProducts = () => {
 
       {!isLoading ? (
         <StyledProducts type={"BEST"}>
-          {products.map((product) => {
-            return <Product key={product.id} product={product} type={"BEST"} />;
-          })}
+          {products.map((product) => (
+            <Link to={`/items/${product.id}`} key={product.id}>
+              <Product product={product} type={"BEST"} />
+            </Link>
+          ))}
         </StyledProducts>
       ) : (
         <SkeletonProducts type={"BEST"} />

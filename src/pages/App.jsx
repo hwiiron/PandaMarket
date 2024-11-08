@@ -6,6 +6,7 @@ import SignUp from "./Signup";
 
 import Boards from "./Boards";
 import Items from "./Items";
+import Item from "./Item";
 import AddItem from "./AddItem";
 
 import NotFound from "./NotFound";
@@ -20,7 +21,12 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
 
         <Route path="/boards" element={<Boards />}></Route>
-        <Route path="/items" element={<Items />}></Route>
+
+        <Route path="/items">
+          <Route index element={<Items />} />
+          <Route path=":id" element={<Item />} />
+        </Route>
+
         <Route path="/additem" element={<AddItem />}></Route>
 
         <Route path="*" element={<NotFound />}></Route>

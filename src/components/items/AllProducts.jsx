@@ -8,6 +8,7 @@ import SkeletonProducts from "./SkeletonProducts";
 import Product from "./Product";
 import ProductControl from "./ProductControl";
 import Paging from "./Paging";
+import { Link } from "react-router-dom";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -104,9 +105,11 @@ const AllProducts = () => {
 
       {!isLoading ? (
         <StyledProducts type={"ALL"}>
-          {filteredData.map((product) => {
-            return <Product key={product.id} product={product} type={"ALL"} />;
-          })}
+          {filteredData.map((product) => (
+            <Link to={`/items/${product.id}`} key={product.id}>
+              <Product product={product} type={"ALL"} />
+            </Link>
+          ))}
         </StyledProducts>
       ) : (
         <SkeletonProducts type={"ALL"} />

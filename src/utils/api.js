@@ -4,7 +4,7 @@ const getBestProducts = async (pageSize) => {
   const response = await fetch(
     `${BASE_URL}?page=1&pageSize=${pageSize}&orderBy=favorite`
   );
-  const data = response.json();
+  const data = await response.json();
   return data;
 };
 
@@ -16,4 +16,16 @@ const getAllProducts = async ({ page, orderBy, pageSize }) => {
   return data;
 };
 
-export { getBestProducts, getAllProducts };
+const getProduct = async (id) => {
+  const response = await fetch(`${BASE_URL}/${id}`);
+  const data = await response.json();
+  return data;
+};
+
+const getComment = async (id) => {
+  const response = await fetch(`${BASE_URL}/${id}/comments?limit=10`);
+  const data = await response.json();
+  return data;
+};
+
+export { getBestProducts, getAllProducts, getProduct, getComment };
