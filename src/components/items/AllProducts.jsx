@@ -11,11 +11,34 @@ import Paging from "./Paging";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [orderBy, setOrderBy] = useState("recent");
   const [search, setSearch] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(false);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
+
+  const [pageSize, setPageSize] = useState(10);
+
+  // 해상도에 따라 pageSize 변경
+  useEffect(() => {
+    const updatePageSize = () => {
+      if (window.innerWidth >= 1200) {
+        setPageSize(10); // 데스크탑
+      } else if (window.innerWidth >= 744) {
+        setPageSize(6); // 태블릿
+      } else {
+        setPageSize(4); // 모바일
+      }
+    };
+
+    updatePageSize();
+    window.addEventListener("resize", updatePageSize);
+
+    return () => window.removeEventListener("resize", updatePageSize);
+  }, []); // pageSize가 변경될 때마다 itemsLoad 호출
 
   const productDataLoad = async (options) => {
     try {
@@ -23,6 +46,7 @@ const AllProducts = () => {
       const { list, totalCount } = await getAllProducts(options);
       setProducts(list);
       setTotalCount(totalCount);
+      setFilteredData(list);
     } catch (error) {
       console.log(error);
     } finally {
@@ -31,8 +55,8 @@ const AllProducts = () => {
   };
 
   useEffect(() => {
-    productDataLoad({ page: currentPage, orderBy: orderBy });
-  }, [currentPage, orderBy]);
+    productDataLoad({ page: currentPage, orderBy: orderBy, pageSize });
+  }, [currentPage, orderBy, pageSize]);
 
   // 최신순, 좋아요순
   const recentClick = () => {
@@ -47,17 +71,16 @@ const AllProducts = () => {
   const SearchInputChange = (value) => {
     setSearch(value);
   };
-  const getFilteredData = () => {
-    if (search === "") {
-      return products;
-    }
 
-    return products.filter((product) =>
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    const filteredData = products.filter((product) =>
       product.name.toUpperCase().includes(search.toUpperCase())
     );
-  };
 
-  const filteredData = getFilteredData();
+    setFilteredData(filteredData);
+  };
 
   // 페이징
   const handlePageChange = (page) => {
@@ -69,15 +92,18 @@ const AllProducts = () => {
       <StyledHead>
         <StyledTitle>전체 상품</StyledTitle>
         <ProductControl
+          value={search}
           SearchInputChange={SearchInputChange}
+          onSubmit={handleSearchSubmit}
           orderBy={orderBy}
           recentClick={recentClick}
           favoriteClick={favoriteClick}
+          setCurrentPage={setCurrentPage}
         />
       </StyledHead>
 
       {!isLoading ? (
-        <StyledProducts>
+        <StyledProducts type={"ALL"}>
           {filteredData.map((product) => {
             return <Product key={product.id} product={product} type={"ALL"} />;
           })}

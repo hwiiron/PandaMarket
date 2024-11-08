@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+const StyledButton = styled.div`
   border-radius: 8px;
   background: var(--blue);
   height: 42px;
+  display: flex;
+  align-items: center;
   color: var(--white);
   padding: ${(props) => {
     switch (props.type) {

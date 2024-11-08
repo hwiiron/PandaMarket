@@ -37,6 +37,10 @@ const StyledPaging = styled.ol`
     background-size: 16px;
     background-position: 50%;
   }
+
+  @media (max-width: 1200px) {
+    margin-top: 40px;
+  }
 `;
 
 export default StyledPaging;

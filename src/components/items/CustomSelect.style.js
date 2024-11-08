@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import selectIcon from "../../assets/select_icon.svg";
+import selectIconM from "../../assets/select_icon-m.svg";
 
 const StyledSelect = styled.div`
   width: 130px;
@@ -57,6 +58,32 @@ const StyledSelect = styled.div`
   > ul li button {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 744px) {
+    width: 42px;
+    flex-shrink: 0;
+    position: relative;
+
+    > button {
+      text-indent: -9999px;
+      padding: 0;
+    }
+
+    > button::after {
+      background: url(${selectIconM}) no-repeat;
+      background-size: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    > ul {
+      width: 130px;
+      margin-top: 0;
+      position: absolute;
+      top: 46px;
+      right: 0;
+    }
   }
 `;
 

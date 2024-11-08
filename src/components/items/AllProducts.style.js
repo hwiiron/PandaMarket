@@ -13,6 +13,17 @@ const StyledHead = styled.div`
   h2 {
     margin-bottom: 0;
   }
+
+  @media (max-width: 744px) {
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+
+    h2 {
+      height: 42px;
+      line-height: 42px;
+    }
+  }
 `;
 
 export { StyledSection, StyledHead };

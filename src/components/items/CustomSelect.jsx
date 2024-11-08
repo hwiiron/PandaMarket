@@ -1,7 +1,12 @@
 import { useState } from "react";
 import StyledSelect from "./CustomSelect.style";
 
-const CustomSelect = ({ orderBy, recentClick, favoriteClick }) => {
+const CustomSelect = ({
+  orderBy,
+  recentClick,
+  favoriteClick,
+  setCurrentPage,
+}) => {
   const [isActive, setIsActive] = useState(false);
 
   const optionToggle = () => {
@@ -20,6 +25,7 @@ const CustomSelect = ({ orderBy, recentClick, favoriteClick }) => {
             onClick={() => {
               recentClick();
               setIsActive(false);
+              setCurrentPage(1);
             }}
           >
             최신순
@@ -31,6 +37,7 @@ const CustomSelect = ({ orderBy, recentClick, favoriteClick }) => {
             onClick={() => {
               favoriteClick();
               setIsActive(false);
+              setCurrentPage(1);
             }}
           >
             좋아요순

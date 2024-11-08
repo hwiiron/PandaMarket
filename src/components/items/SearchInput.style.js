@@ -10,6 +10,14 @@ const StyledInput = styled.input`
   width: 325px;
   height: 42px;
   padding: 0 16px 0 44px;
+
+  @media (max-width: 1200px) {
+    width: 242px;
+  }
+
+  @media (max-width: 744px) {
+    width: 100%;
+  }
 `;
 
 export default StyledInput;
