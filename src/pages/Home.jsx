@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Home.css";
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
@@ -20,7 +21,7 @@ const Home = () => {
               거래해 보세요
             </h2>
 
-            <a>구경하러 가기</a>
+            <Link to={"/items"}>구경하러 가기</Link>
           </div>
         </section>
 
