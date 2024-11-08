@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import StyledNavigation from "./Navigation.style";
 
 function getLinkStyle({ isActive }) {
@@ -21,6 +21,11 @@ const linkList = [
 ];
 
 const Navigation = () => {
+  const location = useLocation();
+  if (location.pathname === "/addItem") {
+    getLinkStyle(isActive);
+  }
+
   return (
     <StyledNavigation>
       {linkList.map((link) => {
