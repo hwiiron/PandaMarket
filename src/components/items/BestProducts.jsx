@@ -10,10 +10,30 @@ const BestProducts = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [pageSize, setPageSize] = useState(4);
+
+  // 해상도에 따라 pageSize 변경
+  useEffect(() => {
+    const updatePageSize = () => {
+      if (window.innerWidth >= 1200) {
+        setPageSize(4); // 데스크탑
+      } else if (window.innerWidth >= 744) {
+        setPageSize(2); // 태블릿
+      } else {
+        setPageSize(1); // 모바일
+      }
+    };
+
+    updatePageSize();
+    window.addEventListener("resize", updatePageSize);
+
+    return () => window.removeEventListener("resize", updatePageSize);
+  }, []);
+
   const productDataLoad = async () => {
     try {
       setIsLoading(true);
-      const { list } = await getBestProducts();
+      const { list } = await getBestProducts(pageSize);
       setProducts(list);
     } catch (error) {
       console.log(error);
@@ -26,7 +46,7 @@ const BestProducts = () => {
   // useEffect 사용하여 첫 렌더링에만 productDataLoad 함수가 실행되게 하여 무한 렌더링 방지
   useEffect(() => {
     productDataLoad();
-  }, []);
+  }, [pageSize]);
 
   // if (!products) return;
 
@@ -35,7 +55,7 @@ const BestProducts = () => {
       <StyledTitle>베스트 상품</StyledTitle>
 
       {!isLoading ? (
-        <StyledProducts>
+        <StyledProducts type={"BEST"}>
           {products.map((product) => {
             return <Product key={product.id} product={product} type={"BEST"} />;
           })}

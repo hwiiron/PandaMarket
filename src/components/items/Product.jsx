@@ -6,7 +6,7 @@ import ProductInfo from "./ProductInfo";
 
 const Product = ({ product, type }) => {
   return (
-    <StyleProduct>
+    <StyleProduct type={type}>
       <article>
         <ProductImg product={product} type={type} />
 
