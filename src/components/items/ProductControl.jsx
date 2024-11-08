@@ -4,14 +4,21 @@ import Button from "../../layouts/Button";
 import CustomSelect from "./CustomSelect";
 
 const ProductControl = ({
+  value,
   SearchInputChange,
+  onSubmit,
   orderBy,
   recentClick,
   favoriteClick,
+  setCurrentPage,
 }) => {
   return (
     <StyledControl>
-      <SearchInput SearchInputChange={SearchInputChange} />
+      <SearchInput
+        value={value}
+        SearchInputChange={SearchInputChange}
+        onSubmit={onSubmit}
+      />
 
       <Button text={"상품 등록하기"} to={"/additem"} />
 
@@ -19,6 +26,7 @@ const ProductControl = ({
         orderBy={orderBy}
         recentClick={recentClick}
         favoriteClick={favoriteClick}
+        setCurrentPage={setCurrentPage}
       />
     </StyledControl>
   );
